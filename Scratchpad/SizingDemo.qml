@@ -43,10 +43,12 @@ Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Tex
             wrapMode: Text.Wrap
         }
     }
+    // Zero sizing paradox Chicken & Egg!
     Column{
         id: columnWithRectangle
         Rectangle{
             id: rectangle
+            visible: true
             anchors.fill: parent
             color: "blue"
         }
@@ -56,7 +58,8 @@ Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Text 5 Tex
                     "Text2 - implicit(Width,Height): " + text2. implicitWidth + ", "+ text2.implicitHeight + " ("+ text2.width+", "+text2.height+")"+ "\n"+
                     "Text3 - implicit(Width,Height): " + text3. implicitWidth + ", "+ text3.implicitHeight + " ("+ text3.width+", "+text3.height+")"+ "\n"+
                     "Text4 - implicit(Width,Height): " + text4. implicitWidth + ", "+ text4.implicitHeight + " ("+ text4.width+", "+text4.height+")"+ "\n"+
-                    "Text5 - implicit(Width,Height): " + text5. implicitWidth + ", "+ text5.implicitHeight + " ("+ text5.width+", "+text5.height+")" + "\n"+
-                    "Rectangle: implicit(Width,Height): "+ rectangle. implicitWidth + ", " + rectangle.implicitHeight+" ("+ text5.width+", "+text5.height+")")
+                    "Text5 - implicit(Width,Height): " + text5. implicitWidth + ", "+ text5.implicitHeight + " ("+ text5.width+", "+text5.height+")" + "\n"+"\n"+
+                    "ColumnWithRectangle: implicit(Width,Height): "+ columnWithRectangle. implicitWidth + ", " + columnWithRectangle.implicitHeight+" ("+ columnWithRectangle.width+", "+columnWithRectangle.height+")"+"\n"+
+                    "Rectangle: implicit(Width,Height): "+ rectangle. implicitWidth + ", " + rectangle.implicitHeight+" ("+ rectangle.width+", "+rectangle.height+")")
     }
 }
